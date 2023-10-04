@@ -30,18 +30,33 @@ function launchModal() {
   modalbg.style.display = "block";
   modalhero.style.display = "none";
   modalCopy.style.display = "none";
-  modalTopnav.style.display = "none";
+  if (window.innerWidth <= 768) {
+    modalTopnav.style.display = "block";
+  } else {
+    modalTopnav.style.display = "none";
+  }
 }
+// fonction au chargement de la page et lors du redimensionnement de la fenêtre
+window.addEventListener("load", launchModal);
+window.addEventListener("resize", launchModal);
+
 //  ----- fermeture formulaire -----
 // écoute de l'événement click sur le bouton close
 modalBtnClose.addEventListener("click", closeModal);
 // fermeture de la modale form
 function closeModal() {
   modalbg.style.display = "none";
-  modalhero.style.display = "block";
   modalCopy.style.display = "block";
   modalTopnav.style.display = "block";
+  if (window.innerWidth <= 800) {
+    modalhero.style.display = "block";
+  } else {
+    modalhero.style.display = "grid";
+  }
 }
+// fonction au chargement de la page et lors du redimensionnement de la fenêtre
+window.addEventListener("load", closeModal);
+window.addEventListener("resize", closeModal);
 
 /*************************
  ********* form **********
@@ -205,9 +220,17 @@ form.addEventListener("submit", function (event) {
   // fermeture de la modale form
   function closeMess() {
     messageValidation.style.display = "none";
-    modalhero.style.display = "grid";
+    modalTopnav.style.display = "block";
     modalCopy.style.display = "block";
+    if (window.innerWidth <= 800) {
+      modalhero.style.display = "block";
+    } else {
+      modalhero.style.display = "grid";
+    }
   }
+  // fonction au chargement de la page et lors du redimensionnement de la fenêtre
+  window.addEventListener("load", closeMess);
+  window.addEventListener("resize", closeMess);
 
   const btnCloseValidationMess = document.getElementById("closeMessBtn");
   // écoute de l'événement click sur le bouton close
@@ -215,7 +238,15 @@ form.addEventListener("submit", function (event) {
   // fermeture de la modale form
   function closeMessBtn() {
     messageValidation.style.display = "none";
-    modalhero.style.display = "block";
+    modalTopnav.style.display = "block";
     modalCopy.style.display = "block";
+    if (window.innerWidth <= 800) {
+      modalhero.style.display = "block";
+    } else {
+      modalhero.style.display = "grid";
+    }
   }
+  // fonction au chargement de la page et lors du redimensionnement de la fenêtre
+  window.addEventListener("load", closeMessBtn);
+  window.addEventListener("resize", closeMessBtn);
 });

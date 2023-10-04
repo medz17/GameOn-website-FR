@@ -159,10 +159,6 @@ main {
 
 .bground {
   display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
   height: 100%;
   width: 100%;
   overflow: auto;
@@ -480,10 +476,6 @@ input[data-error]::after {
 /************** modal c **************/
 .validationMess {
   display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
   height: 100%;
   width: 100%;
   overflow: auto;
@@ -541,8 +533,8 @@ footer {
   }
   .topnav.responsive .icon {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -13px;
+    top: -13px;
   }
   .topnav.responsive a {
     float: none;
@@ -553,6 +545,9 @@ footer {
   /************** Modal form **************/
   #myTopnav {
     display: block;
+  }
+  .bground {
+    margin-top: -20px;
   }
   .content {
     min-height: 100%;
@@ -565,6 +560,9 @@ footer {
     top: -6px;
   }
   /************** Modal v **************/
+  .validationMess {
+    margin-top: -20px;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -604,6 +602,7 @@ footer {
     padding: 12px 35px;
     font-size: 14px;
   }
+  /*footer*/
   .copyrights {
     margin-top: 50px;
     text-align: center;
