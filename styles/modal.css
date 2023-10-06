@@ -158,6 +158,7 @@ main {
 }
 
 .bground {
+  margin: 50px auto;
   display: none;
   height: 100%;
   width: 100%;
@@ -475,6 +476,7 @@ input[data-error]::after {
 
 /************** modal c **************/
 .validationMess {
+  margin: 50px auto;
   display: none;
   height: 100%;
   width: 100%;
