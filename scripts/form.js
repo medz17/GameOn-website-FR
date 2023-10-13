@@ -152,6 +152,8 @@ form.addEventListener("submit", function (event) {
     messageError.style.display = "block";
     event.preventDefault();
   } else {
+    // Réinitialisez les champs du formulaire
+    form.reset();
     //---- message de validation -----
     // const modalBtnCloseMess = document.getElementById("closeMess");
     messageValidation.style.display = "block";
