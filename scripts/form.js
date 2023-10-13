@@ -135,10 +135,14 @@ form.addEventListener("submit", function (event) {
   // ---- Vérif si au moins un champ vide ----
   if (
     firstName === "" ||
+    firstName.length < 2 ||
     lastName === "" ||
+    lastName.length < 2 ||
     email === "" ||
+    !regexEmail.test(email) ||
     dateOfBirth === "" ||
     gameOnParticipation === "" ||
+    !regexNumerique.test(gameOnParticipation) ||
     !choice ||
     !conditionsChecked
   ) {
